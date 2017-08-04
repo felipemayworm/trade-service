@@ -17,13 +17,13 @@ public class ValidationController {
 	@Autowired
     private ValidationService validationService;
 
-    @PostMapping("/api/validate")
-    public TradeValidator validate(@RequestBody Trade trade) {
+    @PostMapping("/api/validateTrade")
+    public TradeValidator validateTrade(@RequestBody Trade trade) {
     	return validationService.checkTrade(trade);
     }
 
-    @PostMapping("/api/validateBulk")
-    public Collection<TradeValidator> validateBulk(@RequestBody Collection<Trade> trades) {
+    @PostMapping("/api/validateTrades")
+    public Collection<TradeValidator> validateTrades(@RequestBody Collection<Trade> trades) {
         return validationService.checkTrades(trades);
     }
     
